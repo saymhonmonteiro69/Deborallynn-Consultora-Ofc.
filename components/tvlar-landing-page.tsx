@@ -116,17 +116,23 @@ export default function TvlarLandingPage() {
               </div>
             </div>
 
-            {/* CARD DIREITA (DÉBORA LYNN) */}
+            {/* CARD DIREITA COM A FOTO DA DÉBORA */}
             <div className="md:col-span-5">
-              <div className="bg-white text-slate-900 p-6 rounded-3xl shadow-2xl relative">
+              <div className="bg-white text-slate-900 p-6 rounded-3xl shadow-2xl relative overflow-hidden">
                 
-                <div className="absolute -top-3 right-6 bg-[#FFC72C] text-slate-900 text-xs font-bold px-3 py-1 rounded-full">
+                <div className="absolute top-4 right-6 z-10 bg-[#FFC72C] text-slate-900 text-xs font-bold px-3 py-1 rounded-full">
                   Atendimento direto
                 </div>
 
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center border-2 border-slate-200 font-bold text-slate-800 text-xl">
-                    DL
+                  {/* FOTO DA DÉBORA NO CARD */}
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#FFC72C] shrink-0">
+                    <Image
+                      src="/debsllynn.png"
+                      alt="Débora Lynn"
+                      fill
+                      className="object-cover object-top"
+                    />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-slate-900">Débora Lynn</h3>
@@ -157,7 +163,7 @@ export default function TvlarLandingPage() {
           </div>
         </section>
 
-        {/* SEÇÃO VANTAGENS (FUNDO BRANCO) - AGORA ACIMA DO FORMULÁRIO */}
+        {/* SEÇÃO VANTAGENS (FUNDO BRANCO) */}
         <section className="bg-white text-slate-900 py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center space-y-4">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">
@@ -203,7 +209,7 @@ export default function TvlarLandingPage() {
           </div>
         </section>
 
-        {/* SEÇÃO DO FORMULÁRIO RETANGULAR - AGORA ABAIXO DAS VANTAGENS */}
+        {/* SEÇÃO DO FORMULÁRIO RETANGULAR */}
         <section id="simulacao-form" className="py-16 bg-[#00273f] border-t border-b border-slate-700/40 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             
@@ -218,7 +224,7 @@ export default function TvlarLandingPage() {
               {/* GRID 3 OPÇÕES DE CADA LADO (TOTAL 6 CAMPOS) */}
               <div className="grid md:grid-cols-2 gap-6">
                 
-                {/* LADO ESQUERDO (3 CAMPOS) */}
+                {/* LADO ESQUERDO */}
                 <div className="space-y-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Seu Nome Completo</label>
@@ -261,7 +267,7 @@ export default function TvlarLandingPage() {
                   </div>
                 </div>
 
-                {/* LADO DIREITO (3 CAMPOS) */}
+                {/* LADO DIREITO */}
                 <div className="space-y-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Seu WhatsApp</label>
@@ -319,7 +325,7 @@ export default function TvlarLandingPage() {
 
               </div>
 
-              {/* OPÇÃO DE DÚVIDAS CENTRALIZADA ABAIXO DOS 6 CAMPOS */}
+              {/* DÚVIDAS */}
               <div className="pt-2">
                 <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 text-center">
                   Dúvidas ou Observações (Opcional)
@@ -334,7 +340,7 @@ export default function TvlarLandingPage() {
                 ></textarea>
               </div>
 
-              {/* BOTÃO DE ENVIAR */}
+              {/* BOTÃO */}
               <button
                 type="submit"
                 className="w-full bg-[#FFC72C] hover:bg-[#e0ad22] text-slate-900 font-extrabold py-4 rounded-xl text-base flex items-center justify-center gap-2 transition-colors shadow-lg cursor-pointer"
