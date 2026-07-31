@@ -81,11 +81,11 @@ export default function TvlarLandingPage() {
           </div>
         </header>
 
-        {/* HERO SECTION COM IMAGEM DE DESTAQUE AO LADO */}
+        {/* HERO SECTION */}
         <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             
-            {/* FOTO DE DESTAQUE DA DÉBORA AO LADO DO TEXTO (OCUPA 5 COLUNAS) */}
+            {/* FOTO DE DESTAQUE DA DÉBORA AO LADO DO TEXTO */}
             <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
               <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border-2 border-[#FFC72C]/40 shadow-2xl bg-[#030f1d]">
                 <Image
@@ -103,7 +103,7 @@ export default function TvlarLandingPage() {
               </div>
             </div>
 
-            {/* TEXTO PRINCIPAL (OCUPA 7 COLUNAS) */}
+            {/* TEXTO PRINCIPAL */}
             <div className="lg:col-span-7 space-y-6 text-left order-1 lg:order-2">
               <div className="inline-block bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-semibold text-white border border-white/20">
                 Sua casa e sua moto nova com quem entende
@@ -133,6 +133,49 @@ export default function TvlarLandingPage() {
                 <span className="flex items-center gap-1.5"><CreditCard className="w-4 h-4 text-[#00C853]" /> Crediário próprio</span>
               </div>
             </div>
+
+          </div>
+        </section>
+
+        {/* SEÇÃO CARD DE ATENDIMENTO DIRETO (POR QUE COMPRAR COMIGO?) */}
+        <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          <div className="bg-white text-slate-900 p-6 sm:p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            
+            <div className="absolute top-4 right-6 z-10 bg-[#FFC72C] text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+              Atendimento direto
+            </div>
+
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#FFC72C] shrink-0 bg-slate-100">
+                <Image
+                  src="/debsllynn.png"
+                  alt="Débora Lynn"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-slate-900 leading-tight">Débora Lynn</h3>
+                <p className="text-xs text-slate-600 font-medium">Consultora especialista Tvlar</p>
+                <div className="flex items-center gap-1 mt-0.5 text-[#FFC72C] text-xs font-bold">
+                  {"★".repeat(5)} <span className="text-slate-500 font-normal ml-1">4,9/5</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 p-5 rounded-2xl space-y-3 text-xs sm:text-sm text-slate-700 mb-6 border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm sm:text-base">Por que comprar comigo?</p>
+              <p className="flex items-center gap-2.5"><ShieldCheck className="w-4 h-4 text-[#091a2b] shrink-0" /> Busco as melhores ofertas do dia para você</p>
+              <p className="flex items-center gap-2.5"><CreditCard className="w-4 h-4 text-[#091a2b] shrink-0" /> Facilidade no carnê e cartão de crédito</p>
+              <p className="flex items-center gap-2.5"><Truck className="w-4 h-4 text-[#091a2b] shrink-0" /> Acompanhamento total do seu pedido</p>
+            </div>
+
+            <a
+              href="#simulacao-form"
+              className="w-full bg-[#091a2b] hover:bg-[#050e17] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm transition-colors shadow-md"
+            >
+              Fazer simulação online <ChevronRight className="w-4 h-4" />
+            </a>
 
           </div>
         </section>
