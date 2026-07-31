@@ -37,7 +37,7 @@ export default function TvlarLandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#003352] text-white font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#091a2b] text-white font-sans flex flex-col justify-between">
       
       <div>
         {/* BANNER SUPERIOR AMARELO */}
@@ -46,7 +46,7 @@ export default function TvlarLandingPage() {
         </div>
 
         {/* CABEÇALHO */}
-        <header className="bg-[#003352] border-b border-slate-700/50 py-4">
+        <header className="bg-[#091a2b] border-b border-slate-700/50 py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
             {/* LOGO + CONSULTORA */}
@@ -72,7 +72,7 @@ export default function TvlarLandingPage() {
               href={`${whatsappBaseLink}?text=Ol%C3%A1%20D%C3%A9bora!%20Vim%20pelo%20site%20e%20gostaria%20de%20consultar%20as%20ofertas.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#00C853] hover:bg-[#00B048] text-slate-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2 transition-colors"
+              className="bg-[#00C853] hover:bg-[#00B048] text-slate-900 font-bold px-4 py-2 rounded-full text-sm flex items-center gap-2 transition-colors shadow-md"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
               WhatsApp
@@ -81,12 +81,30 @@ export default function TvlarLandingPage() {
           </div>
         </header>
 
-        {/* HERO SECTION */}
-        <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-12 gap-8 items-center">
+        {/* HERO SECTION COM IMAGEM DE DESTAQUE AO LADO */}
+        <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
             
-            {/* COLUNA ESQUERDA */}
-            <div className="md:col-span-7 space-y-6 text-left">
+            {/* FOTO DE DESTAQUE DA DÉBORA AO LADO DO TEXTO (OCUPA 5 COLUNAS) */}
+            <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
+              <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border-2 border-[#FFC72C]/40 shadow-2xl bg-[#030f1d]">
+                <Image
+                  src="/debsllynn.png"
+                  alt="Débora Lynn — Consultora Especialista"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#091a2b] via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-4 left-4 right-4 text-center bg-slate-900/80 backdrop-blur-md py-2 px-3 rounded-xl border border-white/10">
+                  <span className="text-xs font-bold text-[#FFC72C]">Débora Lynn</span>
+                  <p className="text-[10px] text-slate-300">Consultora Especialista Tvlar & Yamaha</p>
+                </div>
+              </div>
+            </div>
+
+            {/* TEXTO PRINCIPAL (OCUPA 7 COLUNAS) */}
+            <div className="lg:col-span-7 space-y-6 text-left order-1 lg:order-2">
               <div className="inline-block bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-semibold text-white border border-white/20">
                 Sua casa e sua moto nova com quem entende
               </div>
@@ -116,50 +134,6 @@ export default function TvlarLandingPage() {
               </div>
             </div>
 
-            {/* CARD DIREITA COM A FOTO DA DÉBORA */}
-            <div className="md:col-span-5">
-              <div className="bg-white text-slate-900 p-6 rounded-3xl shadow-2xl relative overflow-hidden">
-                
-                <div className="absolute top-4 right-6 z-10 bg-[#FFC72C] text-slate-900 text-xs font-bold px-3 py-1 rounded-full">
-                  Atendimento direto
-                </div>
-
-                <div className="flex items-center gap-4 mb-6">
-                  {/* FOTO DA DÉBORA NO CARD */}
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#FFC72C] shrink-0">
-                    <Image
-                      src="/debsllynn.png"
-                      alt="Débora Lynn"
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-slate-900">Débora Lynn</h3>
-                    <p className="text-xs text-slate-600 font-medium">Consultora especialista Tvlar</p>
-                    <div className="flex items-center gap-1 mt-1 text-[#FFC72C] text-xs font-bold">
-                      {"★".repeat(5)} <span className="text-slate-500 font-normal ml-1">4,9/5</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-slate-50 p-4 rounded-2xl space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
-                  <p className="font-bold text-slate-900">Por que comprar comigo?</p>
-                  <p className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#003352]" /> Busco as melhores ofertas do dia para você</p>
-                  <p className="flex items-center gap-2"><CreditCard className="w-4 h-4 text-[#003352]" /> Facilidade no carnê e cartão de crédito</p>
-                  <p className="flex items-center gap-2"><Truck className="w-4 h-4 text-[#003352]" /> Acompanhamento total do seu pedido</p>
-                </div>
-
-                <a
-                  href="#simulacao-form"
-                  className="w-full bg-[#003352] hover:bg-[#002238] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm transition-colors"
-                >
-                  Fazer simulação online <ChevronRight className="w-4 h-4" />
-                </a>
-
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -175,7 +149,7 @@ export default function TvlarLandingPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8 text-left">
               <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#091a2b]">
                   <CreditCard className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-slate-900">Crediário facilitado</h3>
@@ -183,7 +157,7 @@ export default function TvlarLandingPage() {
               </div>
 
               <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#091a2b]">
                   <Truck className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-slate-900">Entrega eficiente</h3>
@@ -191,7 +165,7 @@ export default function TvlarLandingPage() {
               </div>
 
               <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#091a2b]">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-slate-900">Garantia e qualidade</h3>
@@ -199,7 +173,7 @@ export default function TvlarLandingPage() {
               </div>
 
               <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#091a2b]">
                   <HeartHandshake className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-slate-900">Suporte humanizado</h3>
@@ -210,7 +184,7 @@ export default function TvlarLandingPage() {
         </section>
 
         {/* SEÇÃO DO FORMULÁRIO RETANGULAR */}
-        <section id="simulacao-form" className="py-16 bg-[#00273f] border-t border-b border-slate-700/40 px-4 sm:px-6 lg:px-8">
+        <section id="simulacao-form" className="py-16 bg-[#061320] border-t border-b border-slate-700/40 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             
             <div className="text-center space-y-2 mb-8">
@@ -219,7 +193,7 @@ export default function TvlarLandingPage() {
               <p className="text-slate-300 text-sm max-w-xl mx-auto">Analiso suas opções personalizadas e retorno diretamente no seu WhatsApp.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-[#031929] border border-slate-800 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-6">
+            <form onSubmit={handleSubmit} className="bg-[#0b1f33] border border-slate-800 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-6">
               
               {/* GRID 3 OPÇÕES DE CADA LADO (TOTAL 6 CAMPOS) */}
               <div className="grid md:grid-cols-2 gap-6">
@@ -235,7 +209,7 @@ export default function TvlarLandingPage() {
                       placeholder="Ex: João Silva" 
                       value={formData.nome}
                       onChange={handleChange}
-                      className="w-full bg-[#00101d] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
+                      className="w-full bg-[#050e17] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
                     />
                   </div>
 
@@ -248,7 +222,7 @@ export default function TvlarLandingPage() {
                       placeholder="000.000.000-00" 
                       value={formData.cpf}
                       onChange={handleChange}
-                      className="w-full bg-[#00101d] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
+                      className="w-full bg-[#050e17] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
                     />
                   </div>
 
@@ -258,7 +232,7 @@ export default function TvlarLandingPage() {
                       name="cnh"
                       value={formData.cnh}
                       onChange={handleChange}
-                      className="w-full bg-[#00101d] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFC72C]"
+                      className="w-full bg-[#050e17] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFC72C]"
                     >
                       <option value="Sim, possuo CNH A">Sim, possuo CNH A</option>
                       <option value="Não possuo CNH A">Não possuo CNH A</option>
@@ -278,7 +252,7 @@ export default function TvlarLandingPage() {
                       placeholder="(92) 99999-9999" 
                       value={formData.whatsapp}
                       onChange={handleChange}
-                      className="w-full bg-[#00101d] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
+                      className="w-full bg-[#050e17] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
                     />
                   </div>
 
@@ -288,7 +262,7 @@ export default function TvlarLandingPage() {
                       name="modelo"
                       value={formData.modelo}
                       onChange={handleChange}
-                      className="w-full bg-[#00101d] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFC72C]"
+                      className="w-full bg-[#050e17] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFC72C]"
                     >
                       <option value="FZ15 FAZER ABS CONNECTED">FZ15 FAZER ABS CONNECTED</option>
                       <option value="FZ25 FAZER ABS">FZ25 FAZER ABS</option>
@@ -313,7 +287,7 @@ export default function TvlarLandingPage() {
                       name="plano"
                       value={formData.plano}
                       onChange={handleChange}
-                      className="w-full bg-[#00101d] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFC72C]"
+                      className="w-full bg-[#050e17] border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FFC72C]"
                     >
                       <option value="Crediário Próprio Tvlar">Crediário Próprio Tvlar</option>
                       <option value="Cartão de Crédito">Cartão de Crédito</option>
@@ -336,7 +310,7 @@ export default function TvlarLandingPage() {
                   placeholder="Escreva aqui sua dúvida, valor de entrada ou mensagem..." 
                   value={formData.duvidas}
                   onChange={handleChange}
-                  className="w-full bg-[#00101d] border border-slate-700 rounded-xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
+                  className="w-full bg-[#050e17] border border-slate-700 rounded-xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#FFC72C]"
                 ></textarea>
               </div>
 
@@ -354,7 +328,7 @@ export default function TvlarLandingPage() {
         </section>
 
         {/* SEÇÃO CTA ESCURA */}
-        <section className="bg-[#031522] py-20 px-4 text-center space-y-6">
+        <section className="bg-[#050e17] py-20 px-4 text-center space-y-6">
           <div className="max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
               Pronto para escolher os melhores produtos para o seu lar?
@@ -378,7 +352,7 @@ export default function TvlarLandingPage() {
       </div>
 
       {/* RODAPÉ FINAL */}
-      <footer className="bg-[#020e17] border-t border-slate-800/60 py-6 px-4 sm:px-8 text-slate-400 text-xs">
+      <footer className="bg-[#030910] border-t border-slate-800/60 py-6 px-4 sm:px-8 text-slate-400 text-xs">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <p className="font-semibold text-slate-200">Débora Lynn — Consultora independente Tvlar</p>
