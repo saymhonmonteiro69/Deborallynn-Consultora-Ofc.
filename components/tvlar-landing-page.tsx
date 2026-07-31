@@ -1,234 +1,329 @@
-import {
-  Award,
-  CheckCircle2,
-  ChevronRight,
-  CreditCard,
-  MessageCircle,
-  PhoneCall,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  Truck,
-  type LucideIcon,
-} from 'lucide-react'
+"use client"
 
-const whatsappNumber = '5592999999999'
-const message = encodeURIComponent(
-  'Olá Débora, vi seu site e gostaria de saber mais sobre as ofertas da Tvlar!',
-)
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
+import { useState } from "react"
+import Image from "next/image"
+import { 
+  Tv, 
+  Refrigerator, 
+  Smartphone, 
+  Sofa, 
+  Bed, 
+  Flame, 
+  CheckCircle, 
+  ShieldCheck, 
+  Truck, 
+  CreditCard, 
+  HeartHandshake, 
+  Star, 
+  ArrowRight, 
+  Menu, 
+  X,
+  MessageCircle
+} from "lucide-react"
 
-const benefits: Array<{
-  icon: LucideIcon
-  title: string
-  description: string
-}> = [
-  {
-    icon: CreditCard,
-    title: 'Crediário facilitado',
-    description:
-      'Opções de parcelamento flexíveis que cabem no seu bolso, no carnê ou cartão.',
-  },
-  {
-    icon: Truck,
-    title: 'Entrega eficiente',
-    description:
-      'Agilidade e segurança no transporte para que seus produtos cheguem perfeitos.',
-  },
-  {
-    icon: Award,
-    title: 'Garantia e qualidade',
-    description:
-      'Produtos originais das melhores marcas com total garantia de fábrica.',
-  },
-  {
-    icon: PhoneCall,
-    title: 'Suporte humanizado',
-    description:
-      'Atendimento direto, sem robôs. Tire todas as suas dúvidas pelo WhatsApp.',
-  },
-]
+export default function TvlarLandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-const reasons = [
-  'Busco as melhores ofertas do dia para você',
-  'Facilidade no carnê e cartão de crédito',
-  'Acompanhamento total do seu pedido',
-]
+  const whatsappLink = "https://wa.me/5592999999999?text=Ol%C3%A1%20D%C3%A9bora!%20Vim%20pelo%20site%20e%20gostaria%20de%20consultar%20as%20ofertas."
 
-function WhatsAppLink({
-  children,
-  className = '',
-}: {
-  children: React.ReactNode
-  className?: string
-}) {
+  const categories = [
+    { name: "Móveis", icon: Sofa },
+    { name: "Eletros", icon: Refrigerator },
+    { name: "Tecnologia", icon: Smartphone },
+    { name: "Colchões", icon: Bed },
+    { name: "Portáteis", icon: Flame },
+    { name: "TV e Áudio", icon: Tv },
+  ]
+
+  const differentials = [
+    { title: "Entrega Garantida", desc: "Entrega rápida e segura em Manaus e interior do AM e RR.", icon: Truck },
+    { title: "Condições Exclusivas", desc: "Planos de parcelamento facilitados e crediário Tvlar.", icon: CreditCard },
+    { title: "Atendimento Humanizado", desc: "Consultoria personalizada direto no seu WhatsApp.", icon: HeartHandshake },
+    { title: "Produtos Originais", desc: "Garantia de fábrica e procedência em todos os itens.", icon: ShieldCheck },
+  ]
+
   return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 font-semibold text-accent-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 ${className}`}
-    >
-      {children}
-    </a>
-  )
-}
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
+      
+      {/* BANNER SUPERIOR INFORMATIVO */}
+      <div className="bg-red-700 text-white text-xs md:text-sm py-2 px-4 text-center font-medium">
+        ⚡ Atendimento exclusivo e orçamentos rápidos pelo WhatsApp com Débora Lynn
+      </div>
 
-function ConsultantCard() {
-  return (
-    <div className="relative w-full max-w-md rounded-3xl border bg-card p-6 text-card-foreground shadow-2xl shadow-foreground/10 sm:p-8">
-      <span className="absolute -top-3 right-5 rounded-full bg-highlight px-3 py-1 text-xs font-bold text-highlight-foreground shadow-sm">
-        Atendimento direto
-      </span>
+      {/* CABEÇALHO / HEADER */}
+      <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            
+            {/* LOGO TVLAR + NOME DA CONSULTORA */}
+            <div className="flex items-center gap-3">
+              <div className="relative h-10 w-28 sm:h-12 sm:w-36 flex items-center justify-center">
+                <Image
+                  src="/logo-tvlar.png"
+                  alt="Logo TVLAR"
+                  width={140}
+                  height={48}
+                  className="object-contain max-h-12 w-auto"
+                  priority
+                />
+              </div>
+              <div className="h-8 w-px bg-slate-300 hidden sm:block"></div>
+              <div className="flex flex-col">
+                <span className="font-bold text-slate-900 text-sm sm:text-base leading-tight">
+                  Débora Lynn
+                </span>
+                <span className="text-xs text-red-600 font-semibold tracking-wide">
+                  Consultora Oficial
+                </span>
+              </div>
+            </div>
 
-      <div className="flex items-center gap-4">
-        <div className="flex size-20 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-secondary text-2xl font-bold text-primary">
-          DL
-        </div>
-        <div className="flex min-w-0 flex-col gap-1">
-          <h2 className="text-xl font-bold text-foreground">Débora Lynn</h2>
-          <p className="text-sm font-medium text-primary">
-            Consultora especialista Tvlar
-          </p>
-          <div className="flex items-center gap-1 text-highlight" aria-label="Avaliação de 4,9 de 5">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <Star key={index} className="size-4 fill-current" aria-hidden="true" />
-            ))}
-            <span className="ml-1 text-xs font-semibold text-muted-foreground">
-              4,9/5
-            </span>
+            {/* NAVEGAÇÃO DESKTOP */}
+            <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+              <a href="#inicio" className="hover:text-red-600 transition-colors">Início</a>
+              <a href="#categorias" className="hover:text-red-600 transition-colors">Categorias</a>
+              <a href="#diferenciais" className="hover:text-red-600 transition-colors">Vantagens</a>
+              <a href="#depoimentos" className="hover:text-red-600 transition-colors">Depoimentos</a>
+            </nav>
+
+            {/* BOTÃO WHATSAPP HEAD */}
+            <div className="hidden sm:flex items-center">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2.5 rounded-full text-sm flex items-center gap-2 shadow-md hover:shadow-lg transition-all"
+              >
+                <MessageCircle className="w-4 h-4 fill-current" />
+                Falar no WhatsApp
+              </a>
+            </div>
+
+            {/* BOTÃO MENU MOBILE */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <div className="mt-6 rounded-2xl border bg-muted p-4">
-        <p className="font-semibold text-foreground">Por que comprar comigo?</p>
-        <ul className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground">
-          {reasons.map((reason) => (
-            <li key={reason} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-              <span>{reason}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <WhatsAppLink className="mt-6 w-full bg-primary text-primary-foreground hover:bg-primary/90">
-        <span>Falar com Débora Lynn</span>
-        <ChevronRight className="size-4" aria-hidden="true" />
-      </WhatsAppLink>
-    </div>
-  )
-}
-
-export function TvlarLandingPage() {
-  return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="flex items-center justify-center gap-2 bg-highlight px-4 py-2 text-center text-xs font-bold text-highlight-foreground sm:text-sm">
-        <Sparkles className="size-4 shrink-0" aria-hidden="true" />
-        <span>Atendimento exclusivo Tvlar — condições especiais válidas hoje</span>
-      </div>
-
-      <header className="sticky top-0 z-40 border-b border-primary-foreground/10 bg-primary/95 px-4 py-4 text-primary-foreground shadow-lg backdrop-blur-md sm:px-6">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="rounded-lg bg-primary-foreground px-3 py-2 text-xl font-black tracking-wider text-primary shadow-sm">
-              TVLAR
-            </div>
-            <div className="hidden border-l border-primary-foreground/20 pl-3 sm:block">
-              <p className="text-sm font-semibold leading-tight">Débora Lynn</p>
-              <p className="text-xs text-primary-foreground/70">Consultora oficial</p>
-            </div>
+        {/* MENU MOBILE EXPANSÍVEL */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a 
+              href="#inicio" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block py-2 text-slate-700 font-medium hover:text-red-600"
+            >
+              Início
+            </a>
+            <a 
+              href="#categorias" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block py-2 text-slate-700 font-medium hover:text-red-600"
+            >
+              Categorias
+            </a>
+            <a 
+              href="#diferenciais" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block py-2 text-slate-700 font-medium hover:text-red-600"
+            >
+              Vantagens
+            </a>
+            <a 
+              href="#depoimentos" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block py-2 text-slate-700 font-medium hover:text-red-600"
+            >
+              Depoimentos
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full mt-2 bg-green-600 text-white font-semibold py-3 rounded-xl text-center flex items-center justify-center gap-2 shadow-sm"
+            >
+              <MessageCircle className="w-5 h-5 fill-current" />
+              Falar no WhatsApp
+            </a>
           </div>
-          <WhatsAppLink className="rounded-full px-4 py-2.5 text-sm sm:px-5">
-            <MessageCircle className="size-4" aria-hidden="true" />
-            <span className="hidden xs:inline">Falar no </span>WhatsApp
-          </WhatsAppLink>
-        </div>
+        )}
       </header>
 
-      <section className="bg-primary px-6 py-16 text-primary-foreground sm:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-          <div className="flex flex-col items-center gap-6 text-center md:items-start md:text-left">
-            <span className="rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1 text-xs font-semibold">
-              Sua casa nova com quem entende
-            </span>
-            <h1 className="max-w-2xl text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-              A melhor experiência de compra na Tvlar com atendimento VIP.
-            </h1>
-            <p className="max-w-xl text-pretty text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-              Encontre móveis, eletrodomésticos e eletrônicos com as melhores condições de pagamento e suporte personalizado do início ao fim.
-            </p>
-            <WhatsAppLink className="w-full px-8 py-4 text-base sm:w-auto sm:text-lg">
-              <MessageCircle className="size-5" aria-hidden="true" />
-              Solicitar orçamento agora
-            </WhatsAppLink>
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/75 md:justify-start">
-              {['Aprovação rápida', 'Entrega garantida', 'Crediário próprio'].map((item) => (
-                <span key={item} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-4 text-accent" aria-hidden="true" />
-                  {item}
+      {/* HERO SECTION */}
+      <section id="inicio" className="relative bg-gradient-to-b from-red-50 to-slate-50 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            
+            <div className="space-y-6 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100 text-red-700 text-xs sm:text-sm font-semibold">
+                <Star className="w-4 h-4 fill-current text-red-600" />
+                Atendimento Oficial Tvlar
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Sua casa completa com as melhores condições da Tvlar
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
+                Olá! Sou a <strong>Débora Lynn</strong>, sua consultora de vendas Tvlar. Estou aqui para te ajudar a encontrar os melhores móveis, eletrodomésticos e tecnologia com ofertas exclusivas e atendimento humanizado.
+              </p>
+              
+              <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 group"
+                >
+                  <MessageCircle className="w-5 h-5 fill-current" />
+                  Solicitar Orçamento no WhatsApp
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+
+              <div className="pt-4 flex items-center justify-center md:justify-start gap-6 text-xs sm:text-sm text-slate-500 font-medium">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-green-600" /> Resposta Rápida
                 </span>
-              ))}
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle className="w-4 h-4 text-green-600" /> Crediário Facilitado
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center">
-            <ConsultantCard />
+
+            <div className="relative flex justify-center">
+              <div className="w-full max-w-md bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-center space-y-6">
+                <div className="w-24 h-24 bg-red-100 rounded-full mx-auto flex items-center justify-center border-4 border-white shadow-md overflow-hidden">
+                  <span className="text-3xl font-bold text-red-600">DL</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">Débora Lynn</h3>
+                  <p className="text-sm text-slate-500">Sua Consultora de Confiança</p>
+                </div>
+                <div className="bg-slate-50 p-4 rounded-2xl text-sm text-slate-600 text-left space-y-2">
+                  <p className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-red-600 shrink-0" />
+                    Consultoria personalizada para sua necessidade
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-red-600 shrink-0" />
+                    Cálculo de frete e prazos direto no chat
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-red-600 shrink-0" />
+                    Acompanhamento do seu pedido até a entrega
+                  </p>
+                </div>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-colors shadow-md"
+                >
+                  Falar Diretamente Comigo
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-16 sm:py-20" aria-labelledby="vantagens">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 text-center">
-            <h2 id="vantagens" className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-              Vantagens exclusivas ao comprar conosco
+      {/* CATEGORIAS */}
+      <section id="categorias" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-2 mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Tudo o que você precisa em um só lugar
             </h2>
-            <p className="text-pretty leading-relaxed text-muted-foreground">
-              Tudo o que você precisa para renovar sua casa com tranquilidade e segurança.
+            <p className="text-slate-600 text-sm sm:text-base">
+              Escolha a categoria desejada e solicite o catálogo de produtos no WhatsApp
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {benefits.map(({ icon: Icon, title, description }) => (
-              <article key={title} className="rounded-2xl border bg-card p-6 shadow-sm transition-transform hover:-translate-y-1">
-                <div className="flex size-12 items-center justify-center rounded-xl bg-secondary text-primary">
-                  <Icon className="size-6" aria-hidden="true" />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+            {categories.map((cat, idx) => {
+              const IconComp = cat.icon
+              return (
+                <a
+                  key={idx}
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-6 bg-slate-50 hover:bg-red-50 border border-slate-100 hover:border-red-200 rounded-2xl text-center transition-all group flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-md"
+                >
+                  <div className="p-3 bg-white group-hover:bg-red-600 rounded-xl text-red-600 group-hover:text-white transition-colors shadow-xs">
+                    <IconComp className="w-6 h-6" />
+                  </div>
+                  <span className="font-semibold text-slate-800 group-hover:text-red-700 text-sm sm:text-base">
+                    {cat.name}
+                  </span>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* DIFERENCIAIS */}
+      <section id="diferenciais" className="py-16 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-2 mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Por que comprar comigo na Tvlar?
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base">
+              Segurança, comodidade e as melhores facilidades da região
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {differentials.map((diff, idx) => {
+              const IconComp = diff.icon
+              return (
+                <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600">
+                    <IconComp className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-bold text-lg text-slate-900">{diff.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{diff.desc}</p>
                 </div>
-                <h3 className="mt-5 text-lg font-bold">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
-              </article>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
-      <section className="bg-foreground px-6 py-16 text-background sm:py-20">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
-          <h2 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Pronto para escolher os melhores produtos para o seu lar?
-          </h2>
-          <p className="max-w-2xl text-pretty text-lg leading-relaxed text-background/75">
-            Fale diretamente com a consultora Débora Lynn e receba um atendimento sob medida para suas necessidades.
+      {/* RODAPÉ */}
+      <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <div className="flex items-center justify-center gap-3">
+            <div className="relative h-8 w-24 flex items-center justify-center">
+              <Image
+                src="/logo-tvlar.png"
+                alt="Logo TVLAR"
+                width={100}
+                height={32}
+                className="object-contain max-h-8 w-auto brightness-200"
+              />
+            </div>
+            <span className="text-slate-500">|</span>
+            <span className="font-semibold text-white">Débora Lynn</span>
+          </div>
+          <p className="text-xs text-slate-500 max-w-md mx-auto">
+            Atendimento independente via consultoria credenciada Tvlar. As ofertas, preços e estoques estão sujeitos a alterações e confirmação no momento do atendimento.
           </p>
-          <WhatsAppLink className="px-8 py-4 text-lg">
-            <MessageCircle className="size-5" aria-hidden="true" />
-            Conversar com a consultora
-          </WhatsAppLink>
-        </div>
-      </section>
-
-      <footer className="border-t bg-foreground px-6 py-8 text-xs text-background/65">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <div>
-            <p className="font-semibold text-background/85">Débora Lynn — Consultora independente Tvlar</p>
-            <p className="mt-1">Todos os direitos reservados.</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="size-4 text-accent" aria-hidden="true" />
-            <span>Ambiente seguro e verificado</span>
-          </div>
+          <p className="text-xs text-slate-600">
+            © {new Date().getFullYear()} Débora Lynn - Consultora Tvlar. Todos os direitos reservados.
+          </p>
         </div>
       </footer>
-    </main>
+
+    </div>
   )
 }
