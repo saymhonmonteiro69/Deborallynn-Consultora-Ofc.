@@ -81,15 +81,15 @@ export default function TvlarLandingPage() {
           </div>
         </header>
 
-        {/* HERO SECTION */}
-        <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+        {/* HERO SECTION - FOTO NA ESQUERDA, TEXTO NO CENTRO, CARD NA DIREITA */}
+        <section className="py-10 md:py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto overflow-hidden">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             
-            {/* FOTO DE DESTAQUE DA DÉBORA AO LADO DO TEXTO */}
-            <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border-2 border-[#FFC72C]/40 shadow-2xl bg-[#030f1d]">
+            {/* FOTO DA DÉBORA (ESQUERDA - 4 COLUNAS) */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#FFC72C]/40 shadow-2xl bg-[#030f1d]">
                 <Image
-                  src="/debsllynn.png"
+                  src="/debsllynn1.png"
                   alt="Débora Lynn — Consultora Especialista"
                   fill
                   className="object-cover object-top"
@@ -103,79 +103,79 @@ export default function TvlarLandingPage() {
               </div>
             </div>
 
-            {/* TEXTO PRINCIPAL */}
-            <div className="lg:col-span-7 space-y-6 text-left order-1 lg:order-2">
+            {/* TEXTO PRINCIPAL (CENTRO - 4 COLUNAS) */}
+            <div className="lg:col-span-4 space-y-5 text-left">
               <div className="inline-block bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-semibold text-white border border-white/20">
                 Sua casa e sua moto nova com quem entende
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+              <h1 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
                 A melhor experiência de compra na Tvlar com atendimento VIP.
               </h1>
 
-              <p className="text-slate-300 text-base sm:text-lg max-w-xl">
+              <p className="text-slate-300 text-sm sm:text-base">
                 Encontre móveis, eletrodomésticos e motos com as melhores condições de pagamento e suporte personalizado do início ao fim.
               </p>
 
               <div className="pt-2">
                 <a
                   href="#simulacao-form"
-                  className="inline-flex items-center gap-2 bg-[#00C853] hover:bg-[#00B048] text-slate-900 font-bold text-base px-6 py-3.5 rounded-xl transition-all shadow-lg"
+                  className="inline-flex items-center gap-2 bg-[#00C853] hover:bg-[#00B048] text-slate-900 font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-all shadow-lg w-full justify-center sm:w-auto"
                 >
                   <MessageCircle className="w-5 h-5 fill-current" />
                   Solicitar simulação agora
                 </a>
               </div>
 
-              <div className="pt-4 flex flex-wrap gap-4 text-xs text-slate-300">
+              <div className="pt-2 flex flex-wrap gap-3 text-xs text-slate-300">
                 <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-[#00C853]" /> Aprovação rápida</span>
                 <span className="flex items-center gap-1.5"><Truck className="w-4 h-4 text-[#00C853]" /> Entrega garantida</span>
                 <span className="flex items-center gap-1.5"><CreditCard className="w-4 h-4 text-[#00C853]" /> Crediário próprio</span>
               </div>
             </div>
 
-          </div>
-        </section>
-
-        {/* SEÇÃO CARD DE ATENDIMENTO DIRETO (POR QUE COMPRAR COMIGO?) */}
-        <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <div className="bg-white text-slate-900 p-6 sm:p-8 rounded-3xl shadow-2xl relative overflow-hidden">
-            
-            <div className="absolute top-4 right-6 z-10 bg-[#FFC72C] text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-              Atendimento direto
-            </div>
-
-            <div className="flex items-center gap-4 mb-6">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#FFC72C] shrink-0 bg-slate-100">
-                <Image
-                  src="/debsllynn.png"
-                  alt="Débora Lynn"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-slate-900 leading-tight">Débora Lynn</h3>
-                <p className="text-xs text-slate-600 font-medium">Consultora especialista Tvlar</p>
-                <div className="flex items-center gap-1 mt-0.5 text-[#FFC72C] text-xs font-bold">
-                  {"★".repeat(5)} <span className="text-slate-500 font-normal ml-1">4,9/5</span>
+            {/* CARD BRANCO DE ATENDIMENTO VIP (DIREITA - 4 COLUNAS) */}
+            <div className="lg:col-span-4">
+              <div className="bg-white text-slate-900 p-6 rounded-3xl shadow-2xl relative overflow-hidden">
+                
+                <div className="absolute top-4 right-5 z-10 bg-[#FFC72C] text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                  Atendimento direto
                 </div>
+
+                <div className="flex items-center gap-3.5 mb-5">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#FFC72C] shrink-0 bg-slate-100">
+                    <Image
+                      src="/debsllynn1.png"
+                      alt="Débora Lynn"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-base text-slate-900 leading-tight">Débora Lynn</h3>
+                    <p className="text-xs text-slate-600 font-medium">Consultora especialista Tvlar</p>
+                    <div className="flex items-center gap-1 mt-0.5 text-[#FFC72C] text-xs font-bold">
+                      {"★".repeat(5)} <span className="text-slate-500 font-normal ml-1">4,9/5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-2xl space-y-2.5 text-xs text-slate-700 mb-5 border border-slate-100">
+                  <p className="font-bold text-slate-900 text-xs">Por que comprar comigo?</p>
+                  <p className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#091a2b] shrink-0" /> Busco as melhores ofertas do dia para você</p>
+                  <p className="flex items-center gap-2"><CreditCard className="w-4 h-4 text-[#091a2b] shrink-0" /> Facilidade no carnê e cartão de crédito</p>
+                  <p className="flex items-center gap-2"><Truck className="w-4 h-4 text-[#091a2b] shrink-0" /> Acompanhamento total do seu pedido</p>
+                </div>
+
+                <a
+                  href="#simulacao-form"
+                  className="w-full bg-[#091a2b] hover:bg-[#050e17] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-xs transition-colors shadow-md"
+                >
+                  Fazer simulação online <ChevronRight className="w-4 h-4" />
+                </a>
+
               </div>
             </div>
-
-            <div className="bg-slate-50 p-5 rounded-2xl space-y-3 text-xs sm:text-sm text-slate-700 mb-6 border border-slate-100">
-              <p className="font-bold text-slate-900 text-sm sm:text-base">Por que comprar comigo?</p>
-              <p className="flex items-center gap-2.5"><ShieldCheck className="w-4 h-4 text-[#091a2b] shrink-0" /> Busco as melhores ofertas do dia para você</p>
-              <p className="flex items-center gap-2.5"><CreditCard className="w-4 h-4 text-[#091a2b] shrink-0" /> Facilidade no carnê e cartão de crédito</p>
-              <p className="flex items-center gap-2.5"><Truck className="w-4 h-4 text-[#091a2b] shrink-0" /> Acompanhamento total do seu pedido</p>
-            </div>
-
-            <a
-              href="#simulacao-form"
-              className="w-full bg-[#091a2b] hover:bg-[#050e17] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm transition-colors shadow-md"
-            >
-              Fazer simulação online <ChevronRight className="w-4 h-4" />
-            </a>
 
           </div>
         </section>
