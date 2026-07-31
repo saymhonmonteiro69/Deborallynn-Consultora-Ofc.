@@ -157,8 +157,54 @@ export default function TvlarLandingPage() {
           </div>
         </section>
 
-        {/* SEÇÃO DO FORMULÁRIO RETANGULAR */}
-        <section id="simulacao-form" className="py-12 bg-[#00273f] border-t border-b border-slate-700/40 px-4 sm:px-6 lg:px-8">
+        {/* SEÇÃO VANTAGENS (FUNDO BRANCO) - AGORA ACIMA DO FORMULÁRIO */}
+        <section className="bg-white text-slate-900 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center space-y-4">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">
+              Vantagens exclusivas ao comprar conosco
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+              Tudo o que você precisa para renovar sua casa ou conquistar sua moto com tranquilidade e segurança.
+            </p>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8 text-left">
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                  <CreditCard className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-slate-900">Crediário facilitado</h3>
+                <p className="text-xs text-slate-600">Opções de parcelamento flexíveis que cabem no seu bolso, no carnê ou cartão.</p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                  <Truck className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-slate-900">Entrega eficiente</h3>
+                <p className="text-xs text-slate-600">Agilidade e segurança no transporte para que seus produtos cheguem perfeitos.</p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-slate-900">Garantia e qualidade</h3>
+                <p className="text-xs text-slate-600">Produtos originais das melhores marcas com total garantia de fábrica.</p>
+              </div>
+
+              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
+                  <HeartHandshake className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-slate-900">Suporte humanizado</h3>
+                <p className="text-xs text-slate-600">Atendimento direto, sem robôs. Tire todas as suas dúvidas pelo WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEÇÃO DO FORMULÁRIO RETANGULAR - AGORA ABAIXO DAS VANTAGENS */}
+        <section id="simulacao-form" className="py-16 bg-[#00273f] border-t border-b border-slate-700/40 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             
             <div className="text-center space-y-2 mb-8">
@@ -298,52 +344,6 @@ export default function TvlarLandingPage() {
               </button>
 
             </form>
-          </div>
-        </section>
-
-        {/* SEÇÃO VANTAGENS (FUNDO BRANCO) */}
-        <section className="bg-white text-slate-900 py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center space-y-4">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">
-              Vantagens exclusivas ao comprar conosco
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
-              Tudo o que você precisa para renovar sua casa ou conquistar sua moto com tranquilidade e segurança.
-            </p>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8 text-left">
-              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
-                  <CreditCard className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900">Crediário facilitado</h3>
-                <p className="text-xs text-slate-600">Opções de parcelamento flexíveis que cabem no seu bolso, no carnê ou cartão.</p>
-              </div>
-
-              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
-                  <Truck className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900">Entrega eficiente</h3>
-                <p className="text-xs text-slate-600">Agilidade e segurança no transporte para que seus produtos cheguem perfeitos.</p>
-              </div>
-
-              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900">Garantia e qualidade</h3>
-                <p className="text-xs text-slate-600">Produtos originais das melhores marcas com total garantia de fábrica.</p>
-              </div>
-
-              <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl space-y-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-[#003352]">
-                  <HeartHandshake className="w-5 h-5" />
-                </div>
-                <h3 className="font-bold text-slate-900">Suporte humanizado</h3>
-                <p className="text-xs text-slate-600">Atendimento direto, sem robôs. Tire todas as suas dúvidas pelo WhatsApp.</p>
-              </div>
-            </div>
           </div>
         </section>
 
